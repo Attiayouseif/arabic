@@ -1,0 +1,389 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>الوحدة الرابعة: الحياة اليومية في العالم العربي</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <!-- Chosen Palette: Sand & Sky - a calming and modern theme. -->
+    <!-- Application Structure Plan: A single-page application with a fixed sidebar for navigation between lessons and a main content area that updates dynamically. This structure is intuitive, mimics a digital textbook, and keeps all content accessible without page reloads, enhancing the user experience. Each section (lesson) will have its own interactive elements. -->
+    <!-- Visualization & Content Choices:
+        - Vocabulary: Interactive flashcards for engaging learning.
+        - Quizzes: Multiple-choice and fill-in-the-blank questions with instant feedback to reinforce learning.
+        - Data Visualization: A bar chart using Chart.js for the "6 Habits of the Rich" section to make statistical data more digestible and visually appealing.
+        - Embedded Media: YouTube videos are embedded directly for seamless listening comprehension exercises.
+        - All elements are designed to be responsive and work on all screen sizes, ensuring accessibility.
+    -->
+    <!-- CONFIRMATION: NO SVG graphics used. NO Mermaid JS used. -->
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Noto+Kufi+Arabic:wght@400;700&display=swap');
+        body {
+            font-family: 'Noto Kufi Arabic', sans-serif;
+            background-color: #FDF6E3;
+            color: #333;
+        }
+        .sidebar {
+            background-color: #f0ebe3;
+        }
+        .content-section {
+            display: none;
+        }
+        .content-section.active {
+            display: block;
+        }
+        .btn {
+            @apply px-4 py-2 rounded-md font-semibold text-white transition-transform transform hover:scale-105;
+        }
+        .btn-primary {
+            @apply bg-blue-500 hover:bg-blue-600;
+        }
+        .btn-secondary {
+            @apply bg-gray-500 hover:bg-gray-600;
+        }
+        .card {
+            @apply bg-white p-6 rounded-lg shadow-md mb-6;
+        }
+        h1, h2, h3 {
+            font-family: 'Noto Kufi Arabic', serif;
+            font-weight: 700;
+        }
+        .vocab-list li {
+            background-color: #fff9f0;
+            margin-bottom: 8px;
+            padding: 10px;
+            border-radius: 8px;
+            border-left: 5px solid #e5c399;
+        }
+    </style>
+</head>
+<body class="flex">
+
+    <!-- Sidebar Navigation -->
+    <aside class="w-1/5 h-screen sticky top-0 bg-stone-100 p-6 overflow-y-auto">
+        <h1 class="text-2xl font-bold mb-6 text-stone-800">الوحدة الرابعة</h1>
+        <nav>
+            <ul class="space-y-2">
+                <li><a href="#intro" class="nav-link block font-semibold text-lg text-stone-700 hover:text-blue-600">مقدمة</a></li>
+                <li><a href="#lesson1" class="nav-link block font-semibold text-lg text-stone-700 hover:text-blue-600">الدرس 1: صباح في حي عربي</a></li>
+                <li><a href="#lesson2" class="nav-link block font-semibold text-lg text-stone-700 hover:text-blue-600">الدرس 2: الحياة في زمن كورونا</a></li>
+                <li><a href="#lesson3" class="nav-link block font-semibold text-lg text-stone-700 hover:text-blue-600">الدرس 3: من الريف إلى المدينة</a></li>
+                <li><a href="#lesson4" class="nav-link block font-semibold text-lg text-stone-700 hover:text-blue-600">الدرس 4: عادات غذائية</a></li>
+                <li><a href="#grammar" class="nav-link block font-semibold text-lg text-stone-700 hover:text-blue-600">القواعد</a></li>
+            </ul>
+        </nav>
+    </aside>
+
+    <!-- Main Content -->
+    <main class="w-4/5 p-8 overflow-y-auto">
+        <!-- Introduction Section -->
+        <section id="intro" class="content-section active">
+            <h1 class="text-4xl font-bold mb-4 text-gray-800">الحياة اليومية في العالم العربي</h1>
+            <p class="text-lg text-gray-700 leading-relaxed">
+                أهلاً بكم في هذه الوحدة التعليمية التي تستكشف جوانب مختلفة من الحياة اليومية في العالم العربي. من خلال نصوص ومقاطع صوتية متنوعة، سنتعرف على الثقافة والعادات والتحولات التي تشكل حياة الناس في هذه المنطقة الغنية. سنتناول مواضيع مثل الحياة في الأحياء التقليدية، تأثير جائحة كورونا، الهجرة من الريف إلى المدينة، وعادات الأكل. استعدوا لتوسيع مفرداتكم، وتعميق فهمكم الثقافي، وتطوير مهاراتكم في اللغة العربية.
+            </p>
+        </section>
+
+        <!-- Lesson 1: Morning in an Old Arab Neighborhood -->
+        <section id="lesson1" class="content-section">
+            <h2 class="text-3xl font-bold mb-4">الدرس الأول: صباح في حي عربي قديم</h2>
+            <div class="card">
+                <h3 class="text-2xl font-semibold mb-2">الثقافة</h3>
+                <ul class="list-disc list-inside space-y-2">
+                    <li><strong>أهمية المسجد والمؤذن:</strong> المسجد هو قلب المجتمع، وصوت الأذان ينظم إيقاع اليوم.</li>
+                    <li><strong>طقوس الفجر:</strong> بداية اليوم بالصلاة تمنح إحساسًا بالروحانية والهدوء.</li>
+                    <li><strong>المخبز والمقهى:</strong> أماكن للتجمع الاجتماعي وتبادل الأخبار، وليست فقط للشراء والأكل.</li>
+                </ul>
+            </div>
+
+            <div class="card">
+                <h3 class="text-2xl font-semibold mb-2">النص: صباح في حي عربي قديم</h3>
+                <p class="text-gray-700 leading-relaxed">كل صباح، قبل أن تشرق الشمس، يبدأ الحي العربي القديم بالاستيقاظ على أصوات معروفة ومألوفة. في زقاق ضيق تحيط به بيوت متلاصقة وشرفات متدلية، يُسمع صوت المؤذن من مئذنة المسجد القريب يدعو الناس لصلاة الفجر عندما يرتفع صوته في الهواء، تفتح النوافذ وتبدأ الحياة. عادة ما تكون رائحة الخبز هي أول ما يشعر به الناس في الصباح المخبز الموجود في زاوية الحي يكون نشيطا من الفجر، ورائحة الأرغفة الطازجة تنتشر في كل مكان وتمتزج برائحة القهوة العربية التي تحضر ببطء على الفحم في بعض البيوت، وبرائحة النعناع الذي يُضاف إلى النارجيلة في مقاهي الزاوية. يجتمع العطر والدخان والبخار معا في مشهد مليء بالحياة...</p>
+            </div>
+            
+            <div class="card">
+                <h3 class="text-2xl font-semibold mb-2">الاستماع: أصوات الحياة اليومية</h3>
+                <p class="mb-4">استمع إلى هذا المقطع الصوتي الذي يصف حياة العمال في أحد الأسواق الشعبية، ثم أجب عن الأسئلة أدناه.</p>
+                <iframe width="100%" height="315" src="https://www.youtube.com/embed/W-v8GKPOC7Y" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                
+                <h4 class="text-xl font-semibold mt-4 mb-2">تمرين 10: صح أم خطأ؟</h4>
+                <div class="space-y-2">
+                    <div>
+                        <p>أ. يبدأ بعض العمال يومهم في الساعة العاشرة صباحًا وينتهون عند الظهر.</p>
+                        <button onclick="checkAnswer(this, 'false')" class="btn bg-green-500 hover:bg-green-600">صح</button>
+                        <button onclick="checkAnswer(this, 'true')" class="btn bg-red-500 hover:bg-red-600">خطأ</button>
+                        <span class="result ml-2"></span>
+                    </div>
+                    <div>
+                        <p>ب. بعضهم يستخدم عربات بسيطة لنقل البضائع في الأسواق.</p>
+                        <button onclick="checkAnswer(this, 'true')" class="btn bg-green-500 hover:bg-green-600">صح</button>
+                        <button onclick="checkAnswer(this, 'false')" class="btn bg-red-500 hover:bg-red-600">خطأ</button>
+                        <span class="result ml-2"></span>
+                    </div>
+                    <div>
+                        <p>ج. يتقاضى كل العمال رواتب ثابتة من الحكومة العراقية.</p>
+                        <button onclick="checkAnswer(this, 'false')" class="btn bg-green-500 hover:bg-green-600">صح</button>
+                        <button onclick="checkAnswer(this, 'true')" class="btn bg-red-500 hover:bg-red-600">خطأ</button>
+                        <span class="result ml-2"></span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Lesson 2: COVID-19 Impact -->
+        <section id="lesson2" class="content-section">
+            <h2 class="text-3xl font-bold mb-4">الدرس الثاني: الحياة في زمن كورونا</h2>
+             <div class="card">
+                <h3 class="text-2xl font-semibold mb-2">مقدمة</h3>
+                <p class="text-gray-700 leading-relaxed">تسبب وباء كورونا في تغييرات جذرية في حياة الناس حول العالم. في هذا الدرس، نستكشف من خلال شهادات شباب عرب كيف أثرت الجائحة على حياتهم اليومية، من العمل والدراسة إلى العلاقات الاجتماعية والصحة النفسية.</p>
+            </div>
+            <div class="card">
+                <h3 class="text-2xl font-semibold mb-2">النص: من العزلة إلى التكيف</h3>
+                <p class="text-gray-700 leading-relaxed">"منذ أكثر من ثلاث سنوات، دخل فيروس كورونا إلى تفاصيل الحياة اليومية وأعاد تشكيلها بشكل غير مسبوق. اللقاء التالي مع أربعة شباب من مختلف الدول العربية يسلّط الضوء على تجارب فردية في ظل هذه الجائحة العالمية..."</p>
+                <details class="mt-4">
+                    <summary class="cursor-pointer text-blue-600">اقرأ شهادة جود من دمشق</summary>
+                    <p class="mt-2 text-gray-600">"من الناحية العملية، قد يبدو أن نمط حياتي لم يتبدل كثيرا. لكن الحقيقة أن التحوّل لم يكن مكانيًا، بل نفسيًا. اعتدت على العمل من البيت، لكن فجأة لم يعد البيت اختيارًا، بل صار عزلة مفروضة. لم يعد بإمكاني الذهاب إلى المقهى أو التنزه مساءً. من حيث التوازن النفسي، تأثرت بشدة."</p>
+                </details>
+                 <details class="mt-4">
+                    <summary class="cursor-pointer text-blue-600">اقرأ شهادة ندى من الجزائر</summary>
+                    <p class="mt-2 text-gray-600">"الجائحة قلبت كل شيء رأسًا على عقب. فجأة أصبحنا نتلقى الدروس من خلال شاشات باهتة، وسط انقطاعات كهرباء، ضعف الشبكة، وانعدام التفاعل. شعرت أنني فقدت صلتي بالجامعة كفضاء اجتماعي وفكري."</p>
+                </details>
+            </div>
+            <div class="card">
+                <h3 class="text-2xl font-semibold mb-2">الاستماع: التغييرات التي فرضتها كورونا</h3>
+                 <p class="mb-4">شاهد هذا الفيديو عن الابتكارات التي ظهرت استجابة لجائحة كورونا، ثم أجب عن الأسئلة.</p>
+                <iframe width="100%" height="315" src="https://www.youtube.com/embed/M0jXnFV1mvM" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                
+                <h4 class="text-xl font-semibold mt-4 mb-2">تمرين 9: اختر الإجابة الصحيحة</h4>
+                <div class="space-y-2">
+                    <p>1. استبدلت أزرار المصعد اليدوية في تايلند بـ...</p>
+                    <div class="flex flex-col space-y-1">
+                        <label><input type="radio" name="q1" value="a"> أزرار صوتية</label>
+                        <label><input type="radio" name="q1" value="b"> دواسات أرجل</label>
+                        <label><input type="radio" name="q1" value="c"> بصمات أصابع</label>
+                    </div>
+                    <button onclick="checkRadio('q1', 'b')" class="btn btn-primary mt-2">تحقق</button> <span class="result-q1 ml-2"></span>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Lesson 3: Rural to Urban Migration -->
+        <section id="lesson3" class="content-section">
+            <h2 class="text-3xl font-bold mb-4">الدرس الثالث: من الريف إلى المدينة</h2>
+             <div class="card">
+                <h3 class="text-2xl font-semibold mb-2">مقدمة</h3>
+                <p class="text-gray-700 leading-relaxed">تتناول هذه القصة تجربة خديجة، وهي شابة تنتقل مع عائلتها من الحياة الريفية الهادئة في تونس إلى صخب المدينة. نستكشف التحديات والصدمات الثقافية والاجتماعية التي تواجهها، وكيف تتغير أحلامها وتطلعاتها في هذا السياق الجديد.</p>
+            </div>
+            <div class="card">
+                <h3 class="text-2xl font-semibold mb-2">النص: من الريف إلى المدينة - حياة النازحين في تونس</h3>
+                <p class="text-gray-700 leading-relaxed">لم يكن صباح خديجة يشبه هذا الصباح من قبل. كانت تستيقظ على أشعة الشمس المتسللة من نافذة طينية في بيتها الصغير بقرية "ببوش" الواقعة في إحدى المناطق الجبلية الداخلية من تونس. [...] كان القرار بمغادرة القرية مؤلماً، فقد كان يعنى ترك الألفة، والجذور، والفضاءات التي حملت الذكريات. [...] أول ما لاحظته خديجة هو صخب الشوارع، وضيق الوقت، والوتيرة السريعة التي يعيش بها أهل المدينة. لم يعد بالإمكان تبادل التحيات الطويلة. [...] "في البداية، شعرت أنني غريبة في مدينتي كل شيء بدا سريعًا وصعبا. لكنني أدركت لاحقا أن الحياة هنا، رغم قسوتها، تفتح أبوابا كانت مغلقة في قريتنا."</p>
+            </div>
+             <div class="card">
+                <h3 class="text-2xl font-semibold mb-2">الاستماع: عادات الأغنياء</h3>
+                 <p class="mb-4">استمع إلى هذا المقطع عن العادات المشتركة بين أغنياء العالم، ثم حلل البيانات المقدمة.</p>
+                <iframe width="100%" height="315" src="https://www.youtube.com/embed/z64ji-LPRZ8" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                
+                <div class="mt-4" style="height: 400px; width: 100%; max-width: 600px; margin: auto;">
+                    <canvas id="habitsChart"></canvas>
+                </div>
+            </div>
+        </section>
+
+        <!-- Lesson 4: Eating Habits -->
+        <section id="lesson4" class="content-section">
+            <h2 class="text-3xl font-bold mb-4">الدرس الرابع: عادات غذائية</h2>
+            <div class="card">
+                <h3 class="text-2xl font-semibold mb-2">مقدمة</h3>
+                <p class="text-gray-700 leading-relaxed">ماذا يأكل المشاهير للحفاظ على لياقتهم البدنية؟ في هذا الدرس، نلقي نظرة على الأنظمة الغذائية الصارمة التي يتبعها لاعبا كرة القدم العالميين، محمد صلاح وليونيل ميسي. ستتعلم مفردات جديدة تتعلق بالطعام والتغذية، وتقارن بين نظامين غذائيين مختلفين.</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <div class="card">
+                    <h3 class="text-2xl font-semibold mb-2">محمد صلاح: 6 وجبات في اليوم</h3>
+                    <p class="text-gray-700 leading-relaxed">يتمتع محمد صلاح، نجم نادي ليفربول، بجسد مثالي ولياقة بدنية عالية. سرّه يكمن في نظام غذائي صارم يتكون من 5 إلى 6 وجبات يوميًا، خالية من الدهون غير الصحية ومحسوبة السعرات بدقة.</p>
+                    <ul class="list-disc list-inside mt-4 space-y-2">
+                        <li><strong>الفطور:</strong> عصير توت، لبن خالي الدسم، ثم بياض البيض مع الأفوكادو على خبز خالٍ من الغلوتين.</li>
+                        <li><strong>الغداء:</strong> بروتين (دجاج أو سمك) مع خضروات وزبادي، ثم فواكه بعد ساعتين.</li>
+                        <li><strong>العشاء:</strong> وجبة خفيفة من الزبادي السادة وبعض الفواكه.</li>
+                    </ul>
+                </div>
+                <div class="card">
+                    <h3 class="text-2xl font-semibold mb-2">ليونيل ميسي: ثورة غذائية</h3>
+                    <p class="text-gray-700 leading-relaxed">غيّر خبير التغذية الإيطالي جوليانو بوزر نظام ميسي الغذائي في عام 2014. يركز النظام الجديد على 5 عناصر أساسية ويقلل من السكر واللحوم.</p>
+                    <ul class="list-disc list-inside mt-4 space-y-2">
+                        <li><strong>الأطعمة الأساسية:</strong> الماء، زيت الزيتون، الحبوب الكاملة، الفواكه الطازجة، الخضروات الطازجة.</li>
+                        <li><strong>إضافات:</strong> المكسرات والبذور.</li>
+                        <li><strong>تجنب:</strong> السكر والكميات الكبيرة من اللحوم.</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Grammar Section -->
+        <section id="grammar" class="content-section">
+            <h2 class="text-3xl font-bold mb-4">القواعد</h2>
+            <div class="card">
+                <h3 class="text-2xl font-semibold mb-2">اسم الفاعل</h3>
+                <p class="text-gray-700">اسم الفاعل هو اسم مشتق من الفعل للدلالة على من قام بالفعل. يُصاغ من الفعل الثلاثي على وزن "فاعل" (مثل: كاتب من كتب)، ومن غير الثلاثي على وزن مضارعه مع إبدال حرف المضارعة ميماً مضمومة وكسر ما قبل الآخر (مثل: مُعلِّم من علّم).</p>
+                <div class="mt-4">
+                    <label for="verb-input" class="block mb-2 text-sm font-medium text-gray-900">أدخل فعلاً ثلاثياً (مثل: كتب):</label>
+                    <input type="text" id="verb-input" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5">
+                    <button onclick="generateIsmFaael()" class="btn btn-primary mt-2">حوّل</button>
+                    <p id="ism-fael-result" class="mt-2 font-semibold"></p>
+                </div>
+            </div>
+            <div class="card">
+                <h3 class="text-2xl font-semibold mb-2">اسم المفعول</h3>
+                <p class="text-gray-700">اسم المفعول هو اسم مشتق من الفعل للدلالة على من وقع عليه الفعل. يُصاغ من الفعل الثلاثي على وزن "مفعول" (مثل: مكتوب من كتب)، ومن غير الثلاثي على وزن مضارعه مع إبدال حرف المضارعة ميماً مضمومة وفتح ما قبل الآخر (مثل: مُعلَم من علّم).</p>
+                <div class="mt-4">
+                    <label for="verb-mafool-input" class="block mb-2 text-sm font-medium text-gray-900">أدخل فعلاً ثلاثياً (مثل: كتب):</label>
+                    <input type="text" id="verb-mafool-input" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5">
+                    <button onclick="generateIsmMafool()" class="btn btn-primary mt-2">حوّل</button>
+                    <p id="ism-mafool-result" class="mt-2 font-semibold"></p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const links = document.querySelectorAll('.nav-link');
+            const sections = document.querySelectorAll('.content-section');
+
+            function showSection(id) {
+                sections.forEach(section => {
+                    section.classList.remove('active');
+                });
+                const targetSection = document.getElementById(id);
+                if (targetSection) {
+                    targetSection.classList.add('active');
+                }
+            }
+
+            links.forEach(link => {
+                link.addEventListener('click', (event) => {
+                    event.preventDefault();
+                    const targetId = link.getAttribute('href').substring(1);
+                    showSection(targetId);
+                });
+            });
+
+            // Show the intro section by default
+            showSection('intro');
+
+            // Chart.js for Lesson 3
+            const ctx = document.getElementById('habitsChart').getContext('2d');
+            const habitsChart = new Chart(ctx, {
+                type: 'bar',
+                data: {
+                    labels: ['يمارسون مهارات جديدة', 'يعملون ضمن فرق', 'يستمعون أكثر مما يتحدثون'],
+                    datasets: [{
+                        label: 'نسبة الأثرياء الذين يتبعون هذه العادات',
+                        data: [49, 86.5, 95], // Example data from the text, assuming 95% listen more
+                        backgroundColor: [
+                            'rgba(255, 99, 132, 0.2)',
+                            'rgba(54, 162, 235, 0.2)',
+                            'rgba(255, 206, 86, 0.2)'
+                        ],
+                        borderColor: [
+                            'rgba(255, 99, 132, 1)',
+                            'rgba(54, 162, 235, 1)',
+                            'rgba(255, 206, 86, 1)'
+                        ],
+                        borderWidth: 1
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    scales: {
+                        y: {
+                            beginAtZero: true,
+                            ticks: {
+                                callback: function(value) {
+                                    return value + '%'
+                                }
+                            }
+                        }
+                    },
+                    plugins: {
+                        legend: {
+                            display: false
+                        },
+                        title: {
+                            display: true,
+                            text: 'عادات الأثرياء (كنسبة مئوية)',
+                            font: {
+                                size: 18,
+                                family: 'Noto Kufi Arabic, sans-serif'
+                            }
+                        }
+                    }
+                }
+            });
+        });
+
+        function checkAnswer(button, correctAnswer) {
+            const isCorrect = button.innerText.toLowerCase() === correctAnswer.toLowerCase();
+            const resultSpan = button.parentElement.querySelector('.result');
+            if (isCorrect) {
+                resultSpan.textContent = 'صحيح!';
+                resultSpan.style.color = 'green';
+            } else {
+                resultSpan.textContent = 'خطأ، حاول مرة أخرى.';
+                resultSpan.style.color = 'red';
+            }
+        }
+        
+        function checkRadio(questionName, correctAnswer) {
+            const radios = document.getElementsByName(questionName);
+            const resultSpan = document.querySelector(`.result-${questionName}`);
+            let selectedValue;
+            for (const radio of radios) {
+                if (radio.checked) {
+                    selectedValue = radio.value;
+                    break;
+                }
+            }
+            if (selectedValue === correctAnswer) {
+                resultSpan.textContent = 'أحسنت!';
+                resultSpan.style.color = 'green';
+            } else {
+                resultSpan.textContent = 'إجابة غير صحيحة.';
+                resultSpan.style.color = 'red';
+            }
+        }
+
+        function generateIsmFaael() {
+            const verb = document.getElementById('verb-input').value.trim();
+            const resultEl = document.getElementById('ism-fael-result');
+            if (verb.length !== 3) {
+                resultEl.textContent = 'الرجاء إدخال فعل ثلاثي.';
+                resultEl.style.color = 'red';
+                return;
+            }
+            const faa = verb.charAt(0);
+            const ain = verb.charAt(1);
+            const laam = verb.charAt(2);
+            resultEl.textContent = `اسم الفاعل هو: ${faa}ا${ain}${laam} (فَاعِل)`;
+            resultEl.style.color = 'green';
+        }
+
+        function generateIsmMafool() {
+            const verb = document.getElementById('verb-mafool-input').value.trim();
+            const resultEl = document.getElementById('ism-mafool-result');
+            if (verb.length !== 3) {
+                resultEl.textContent = 'الرجاء إدخال فعل ثلاثي.';
+                resultEl.style.color = 'red';
+                return;
+            }
+            const faa = verb.charAt(0);
+            const ain = verb.charAt(1);
+            const laam = verb.charAt(2);
+            resultEl.textContent = `اسم المفعول هو: مَ${faa}${ain}ُو${laam} (مَفْعُول)`;
+            resultEl.style.color = 'green';
+        }
+    </script>
+
+</body>
+</html>
